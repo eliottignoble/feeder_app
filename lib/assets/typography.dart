@@ -16,4 +16,10 @@ class CustomTextStyles {
     fontSize: 24,
     fontWeight: FontWeight.bold,
   );
+
+  static const TextStyle baseInter = TextStyle(
+    fontFamily: inter,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
 }

@@ -22,4 +22,16 @@ class CustomTextStyles {
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle cardsOnboardingTitle = TextStyle(
+    fontFamily: inter,
+    fontSize: 9,
+    fontWeight: FontWeight.w700,
+  );
+
+  static const TextStyle cardsOnboardingsDescription = TextStyle(
+    fontFamily: inter,
+    fontSize: 7,
+    fontWeight: FontWeight.w500,
+  );
 }

@@ -80,7 +80,7 @@ class NavigationRouter {
       // si il est true et que l'url est /onboarding-step-1 alors on va sur la page /home
       if (oboardingProviders.isOnboardingCompleted &&
           state.matchedLocation == AppScreens.onboarding1.toPath) {
-        return AppScreens.home.toPath;
+        return AppScreens.login.toPath;
       }
       return null;
     },

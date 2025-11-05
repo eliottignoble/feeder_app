@@ -78,15 +78,17 @@ class _OnboardingStartSate extends State<OnboardingStart> {
                 // appelle du pageView
                 SizedBox(
                   height: 300,
-                  width: 300,
-                  child: CardsOnboarding(
-                    imagesChunked: chunkedImages,
-                    onSlideChanged: (index) {
-                      debugPrint("Slide changed: $index");
-                      setState(() {
-                        currentSlide = index;
-                      });
-                    },
+                  width: double.infinity,
+                  child: SizedBox(
+                    child: CardsOnboarding(
+                      imagesChunked: chunkedImages,
+                      onSlideChanged: (index) {
+                        debugPrint("Slide changed: $index");
+                        setState(() {
+                          currentSlide = index;
+                        });
+                      },
+                    ),
                   ),
                 ),
 

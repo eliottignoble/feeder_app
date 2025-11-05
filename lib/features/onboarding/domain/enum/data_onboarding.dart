@@ -26,8 +26,8 @@ enum ImageInfoCards {
     'Pas besoin de garants',
   ),
   image5(
-    CustomImages.logoBasicFeet,
     CustomImages.basicFeet,
+    CustomImages.logoBasicFeet,
     'Abonnement 1 an',
     '2 mois offerts ',
   ),

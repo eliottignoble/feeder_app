@@ -25,7 +25,7 @@ class CardsOnboarding extends StatelessWidget {
       itemExtent: 300,
       itemSnapping: true,
       children: chunkedImages.map((sublist) {
-        final index = sublist.length;
+        final index = sublist;
         print(chunkedImages.length);
         return Column(
           children: [

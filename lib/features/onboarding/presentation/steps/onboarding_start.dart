@@ -1,6 +1,7 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/onboarding/presentation/components/cards-onboarding.dart';
+import 'package:feeed/features/onboarding/presentation/components/counter.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:feeed/providers/onboarding_providers.dart';
 import 'package:flutter/material.dart';
@@ -73,6 +74,8 @@ class OnboardingStart extends StatelessWidget {
                 ),
                 // appelle du caroussel
                 Container(height: 300, width: 300, child: CardsOnboarding()),
+                //counter
+                Counter(),
                 // text
                 Text(
                   "Accède aux 500 bons plans qu'on te propose chaque mois",

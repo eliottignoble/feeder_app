@@ -1,17 +1,34 @@
 import 'package:feeed/assets/colors.dart';
+import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/onboarding/presentation/components/cards-onboarding.dart';
+import 'package:feeed/features/onboarding/presentation/components/onboarding_card.dart';
 import 'package:feeed/features/onboarding/presentation/components/counter.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:feeed/providers/onboarding_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingStart extends StatelessWidget {
-  const OnboardingStart({super.key});
+class OnboardingStart extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _OnboardingStartSate();
+}
+
+class _OnboardingStartSate extends State<OnboardingStart> {
+  int currentSlide = 0;
 
   @override
   Widget build(BuildContext context) {
+    // 1️⃣ Créer les sous-listes (4 images par card)
+    List<List<ImageInfoCards>> chunkedImages = [];
+    for (var i = 0; i < ImageInfoCards.values.length; i += 4) {
+      chunkedImages.add(
+        ImageInfoCards.values.sublist(
+          i,
+          (i + 4).clamp(0, ImageInfoCards.values.length),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: CustomColors.bg,
       body: Center(
@@ -37,45 +54,44 @@ class OnboardingStart extends StatelessWidget {
                 ),
               ],
             ),
-
             //  partie centrale
             Column(
               spacing: 24,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  spacing: 6,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: CustomColors.grey,
+                    for (var i = 0; i < chunkedImages.length; i++)
+                      Container(
+                        height: 5,
+                        width: 25,
+                        margin: const EdgeInsets.symmetric(horizontal: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: i == currentSlide
+                              ? CustomColors.white
+                              : CustomColors.greyIcon,
+                        ),
                       ),
-                      height: 5,
-                      width: 25,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: CustomColors.grey,
-                      ),
-                      height: 5,
-                      width: 25,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: CustomColors.grey,
-                      ),
-                      height: 5,
-                      width: 25,
-                    ),
                   ],
                 ),
-                // appelle du caroussel
-                Container(height: 300, width: 300, child: CardsOnboarding()),
+                // appelle du pageView
+                SizedBox(
+                  height: 300,
+                  width: 300,
+                  child: CardsOnboarding(
+                    imagesChunked: chunkedImages,
+                    onSlideChanged: (index) {
+                      debugPrint("Slide changed: $index");
+                      setState(() {
+                        currentSlide = index;
+                      });
+                    },
+                  ),
+                ),
+
                 //counter
-                Counter(),
+                //Counter(lenghtChunkedImages: chunkedImages.length),
                 // text
                 Text(
                   "Accède aux 500 bons plans qu'on te propose chaque mois",

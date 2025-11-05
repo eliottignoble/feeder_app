@@ -34,4 +34,10 @@ class CustomTextStyles {
     fontSize: 7,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle subtitle = TextStyle(
+    fontFamily: inter,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
 }

@@ -3,10 +3,16 @@ import 'package:feeed/assets/typography.dart';
 import 'package:flutter/material.dart';
 
 class CtaButton extends StatelessWidget {
-  const CtaButton({super.key, required this.text, required this.onPressed});
+  const CtaButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.backgroundColor,
+  });
 
   final String text;
   final VoidCallback onPressed;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class CtaButton extends StatelessWidget {
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
               minimumSize: Size(261, 56),
-              backgroundColor: CustomColors.rose,
+              backgroundColor: backgroundColor ?? CustomColors.rose,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
               ),

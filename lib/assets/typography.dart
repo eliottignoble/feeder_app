@@ -9,6 +9,7 @@ class CustomTextStyles {
     fontSize: 30,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
+    height: 0,
   );
 
   static const TextStyle heading1 = TextStyle(
@@ -45,6 +46,20 @@ class CustomTextStyles {
     fontFamily: inter,
     fontSize: 12,
     fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
+
+  static const TextStyle textCategory = TextStyle(
+    fontFamily: integral,
+    fontSize: 10,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+  );
+
+  static const TextStyle h3 = TextStyle(
+    fontFamily: integral,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
     fontStyle: FontStyle.normal,
   );
 }

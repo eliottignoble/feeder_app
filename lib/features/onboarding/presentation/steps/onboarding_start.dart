@@ -1,7 +1,7 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/onboarding/presentation/components/onboarding_card.dart';
+import 'package:feeed/features/onboarding/presentation/components/onboarding_grid.dart';
 import 'package:feeed/features/onboarding/presentation/components/counter.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:feeed/providers/onboarding_providers.dart';

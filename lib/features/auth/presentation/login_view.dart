@@ -1,15 +1,16 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/auth/components/forms/login/login_form.dart';
+
 import 'package:feeed/router/screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:go_router/go_router.dart';
+import '../components/forms/login/login_form.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
-  
-  final GlobalKey<LoginFormState> _loginFormKey = GlobalKey<LoginFormState>();
+
+  final _loginFormKey = GlobalKey<LoginFormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +22,9 @@ class LoginView extends StatelessWidget {
         children: [
           Column(
             children: [
-              Text("BIENVENUE", style: CustomTextStyles.title),
+              Text("TE REVOILà !", style: CustomTextStyles.title),
               Text(
-                "Inscris-toi pour avoir les meilleurs plans étudiants !",
+                "Reviens vite pour profiter des bons plans",
                 style: CustomTextStyles.subtitle,
                 textAlign: TextAlign.center,
               ),
@@ -37,15 +38,16 @@ class LoginView extends StatelessWidget {
               children: [
                 LoginForm(key: _loginFormKey),
                 Text(
-                  "En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou",
+                  "Mot de passe oublié ?",
                   style: CustomTextStyles.baseInter,
+                  textAlign: TextAlign.end,
                 ),
                 CtaButton(
                   text: "SE CONNECTER",
                   backgroundColor: CustomColors.bg,
                   onPressed: () {
                     _loginFormKey.currentState?.submit();
-                    //context.go(AppScreens.home.toPath);
+                    context.go(AppScreens.home.toPath);
                   },
                 ),
               ],
@@ -53,12 +55,16 @@ class LoginView extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 10,
+            spacing: 5,
             children: [
-              Text("Déjà un compte ?", textAlign: TextAlign.center),
+              Text("Pas encore inscrit ?", textAlign: TextAlign.center),
               InkWell(
                 onTap: () => context.go(AppScreens.login.toPath),
-                child: Text("Déjà un compte ?", textAlign: TextAlign.center),
+                child: Text(
+                  "Allez viens!",
+                  style: CustomTextStyles.link.copyWith(color: CustomColors.bg),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),

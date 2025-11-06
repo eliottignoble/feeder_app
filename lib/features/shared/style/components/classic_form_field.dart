@@ -9,7 +9,7 @@ class ClassicFormField extends StatelessWidget {
     required this.label,
     this.typePassword,
     required this.validator,
-    required this.onSaved,
+    required this.onChanged,
     required this.placeholder,
   });
 
@@ -17,7 +17,7 @@ class ClassicFormField extends StatelessWidget {
   final String placeholder;
   final bool? typePassword;
   final String? Function(String?) validator;
-  final void Function(String?) onSaved;
+  final void Function(String?) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class ClassicFormField extends StatelessWidget {
           ),
           obscureText: typePassword ?? false,
           validator: validator,
-          onSaved: onSaved,
+          onSaved: onChanged,
         ),
       ),
     );

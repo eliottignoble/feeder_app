@@ -1,6 +1,6 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/auth/components/forms/login/login_form.dart';
+import 'package:feeed/features/auth/components/forms/login/register_form.dart';
 import 'package:feeed/router/screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
@@ -11,7 +11,7 @@ class RegisterView extends StatelessWidget {
 
   // récupérer le state du LoginFormState pour avoir accès aux states (function submit)
   // passerelle entre parent et state enfant
-  final GlobalKey<LoginFormState> _loginFormKey = GlobalKey<LoginFormState>();
+  final _loginFormKey = GlobalKey<RegisterFormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,25 +31,29 @@ class RegisterView extends StatelessWidget {
               ),
             ],
           ),
-          //forms
           Padding(
             padding: EdgeInsets.all(20.0),
             child: Column(
-              spacing: 20,
+              spacing: 60,
               children: [
                 // on attache _loginFormKey pour accéder au state du login
-                LoginForm(key: _loginFormKey),
-                Text(
-                  "En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou",
-                  style: CustomTextStyles.baseInter,
-                ),
-                CtaButton(
-                  text: "SE CONNECTER",
-                  backgroundColor: CustomColors.bg,
-                  onPressed: () {
-                    _loginFormKey.currentState?.submit();
-                    //context.go(AppScreens.home.toPath);
-                  },
+                RegisterForm(key: _loginFormKey),
+                Column(
+                  spacing: 20,
+                  children: [
+                    Text(
+                      "En t’inscrivant, tu acceptes les Conditions générales d’utilisation de Padsou",
+                      style: CustomTextStyles.baseInter,
+                    ),
+                    CtaButton(
+                      text: "SE CONNECTER",
+                      backgroundColor: CustomColors.bg,
+                      onPressed: () {
+                        _loginFormKey.currentState?.submit();
+                        context.go(AppScreens.login.toPath);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),

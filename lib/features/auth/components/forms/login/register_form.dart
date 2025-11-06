@@ -1,18 +1,19 @@
 import 'package:feeed/features/shared/style/components/classic_form_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({super.key});
+class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
 
   @override
-  State<LoginForm> createState() => LoginFormState();
+  State<RegisterForm> createState() => RegisterFormState();
 }
 
-class LoginFormState extends State<LoginForm> {
+class RegisterFormState extends State<RegisterForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String _email = '';
   String _password = '';
+  String _confirmPassword = '';
 
   //creation de la fonction submit
   void submit() {
@@ -21,6 +22,7 @@ class LoginFormState extends State<LoginForm> {
 
       print(_email);
       print(_password);
+      print(_confirmPassword);
     }
   }
 
@@ -56,6 +58,18 @@ class LoginFormState extends State<LoginForm> {
               return null;
             },
             onChanged: (value) => _password = value!,
+          ),
+          ClassicFormField(
+            label: "Confirm password",
+            placeholder: 'Confirme ton mot de passe',
+            typePassword: true,
+            validator: (String? value) {
+              if (value == null || value.isEmpty) {
+                return 'votre mot de passe est obigatoire';
+              }
+              return null;
+            },
+            onChanged: (value) => _confirmPassword = value!,
           ),
         ],
       ),

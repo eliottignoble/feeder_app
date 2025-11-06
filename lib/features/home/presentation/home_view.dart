@@ -1,5 +1,5 @@
 import 'package:feeed/assets/colors.dart';
-import 'package:feeed/features/home/presentation/components/Home_grid.dart';
+import 'package:feeed/features/home/presentation/components/home_grid.dart';
 import 'package:feeed/features/home/presentation/components/home_category.dart';
 import 'package:feeed/features/home/presentation/components/home_header.dart';
 import 'package:flutter/material.dart';

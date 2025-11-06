@@ -4,7 +4,7 @@ import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/onboarding/presentation/components/onboarding_grid.dart';
 import 'package:feeed/features/onboarding/presentation/components/counter.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
-import 'package:feeed/providers/onboarding_providers.dart';
+import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -109,7 +109,7 @@ class _OnboardingStartSate extends State<OnboardingStart> {
             CtaButton(
               text: "C'est parti !",
               onPressed: () async {
-                final store = context.read<OboardingProviders>();
+                final store = context.read<OboardingProvider>();
                 await store.completeOnboarding();
               },
             ),

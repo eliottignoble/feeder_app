@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:feeed/utils/shared_preferences_constants.dart';
 
-class OboardingProviders extends ChangeNotifier {
+class OboardingProvider extends ChangeNotifier {
   bool _isOnboardingCompleted = false;
 
   bool get isOnboardingCompleted => _isOnboardingCompleted;

@@ -17,13 +17,13 @@ enum ImageInfoCards {
   image3(
     CustomImages.bar,
     CustomImages.lobarBar,
-    'Abonnement 1 an',
+    'Le grand barathon',
     '2 mois offerts ',
   ),
   image4(
     CustomImages.tacos,
     CustomImages.logosTacos,
-    'Garantie appart',
+    'Giga MAXI Tacos',
     'Pas besoin de garants',
   ),
   image5(
@@ -41,13 +41,13 @@ enum ImageInfoCards {
   image7(
     CustomImages.bar,
     CustomImages.lobarBar,
-    'Abonnement 1 an',
+    'Le grand barathon',
     '2 mois offerts ',
   ),
   image8(
     CustomImages.tacos,
     CustomImages.logosTacos,
-    'Garantie appart',
+    'Giga MAXI Tacos',
     'Pas besoin de garants',
   );
 

@@ -19,9 +19,6 @@ class OnboardingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 10,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Stack(
           alignment: Alignment.bottomCenter,

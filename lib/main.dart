@@ -1,5 +1,5 @@
 import 'package:feeed/app.dart';
-import 'package:feeed/providers/onboarding_providers.dart';
+import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:feeed/router/router.dart';
 import 'package:feeed/utils/shared_preferences_constants.dart';
@@ -9,7 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // instance du store
-  final oboardingProviders = OboardingProviders();
+  final oboardingProviders = OboardingProvider();
   // load du storage
   await oboardingProviders.loadFromPrefs();
 

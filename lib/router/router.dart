@@ -7,7 +7,7 @@ import 'package:feeed/features/onboarding/presentation/steps/onboarding_start.da
 import 'package:feeed/features/paywall/presentation/paywall_view.dart';
 import 'package:feeed/features/plan/presentation/plan_view.dart';
 import 'package:feeed/features/shared/style/components/navigations/bottom_bar_shell.dart';
-import 'package:feeed/providers/onboarding_providers.dart';
+import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:feeed/router/screen_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:feeed/utils/shared_preferences_constants.dart';
@@ -15,7 +15,7 @@ import 'package:feeed/utils/shared_preferences_constants.dart';
 class NavigationRouter {
   // call des providers + constants
   final SharedPreferencesConstants sharedPreferencesConstants;
-  final OboardingProviders oboardingProviders;
+  final OboardingProvider oboardingProviders;
 
   NavigationRouter(this.sharedPreferencesConstants, this.oboardingProviders);
 

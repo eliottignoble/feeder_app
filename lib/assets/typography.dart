@@ -40,4 +40,11 @@ class CustomTextStyles {
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle link = TextStyle(
+    fontFamily: inter,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+  );
 }

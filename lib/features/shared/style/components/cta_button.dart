@@ -22,7 +22,7 @@ class CtaButton extends StatelessWidget {
           ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(261, 56),
+              minimumSize: Size(double.infinity, 56),
               backgroundColor: backgroundColor ?? CustomColors.rose,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),

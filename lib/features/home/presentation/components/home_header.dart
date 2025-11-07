@@ -2,38 +2,92 @@ import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/home/presentation/components/search/search_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  const HomeHeader({
+    super.key,
+    required this.onQueryChanged,
+    required this.searchResult,
+  });
+
+  final void Function(List<String> result) onQueryChanged;
+  final List<String> searchResult;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 40,
+    const double itemHeight = 56; // hauteur approx d’un ListTile
+    const double maxHeight = 250; // limite max d'affichage
+
+    // ✅ hauteur dynamique calculée
+    final double dynamicHeight = (searchResult.length * itemHeight).clamp(
+      0,
+      maxHeight,
+    );
+
+    return Stack(
+      clipBehavior: Clip.none,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0, right: 16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "COUCOU TOI,",
-                style: CustomTextStyles.title.copyWith(
-                  color: CustomColors.white,
-                ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 40,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "COUCOU TOI,",
+                    style: CustomTextStyles.title.copyWith(
+                      color: CustomColors.white,
+                    ),
+                  ),
+                  Text(
+                    "T'es en manque de thunes ?",
+                    style: CustomTextStyles.subtitle.copyWith(
+                      color: CustomColors.white,
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                "T'es en manque de thunes ?",
-                style: CustomTextStyles.subtitle.copyWith(
-                  color: CustomColors.white,
-                ),
-              ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: SearchView(onQueryChanged: onQueryChanged),
+            ),
+
+            // ✅ on réserve exactement l’espace dynamique
+            if (searchResult.isNotEmpty) SizedBox(height: dynamicHeight + 16),
+          ],
         ),
-        Padding(padding: const EdgeInsets.all(16.0), child: SearchView()),
+
+        // ✅ la liste utilise aussi la hauteur dynamique
+        if (searchResult.isNotEmpty)
+          Positioned(
+            left: 16,
+            right: 16,
+            top: 180,
+            child: Container(
+              height: dynamicHeight,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.12),
+                    blurRadius: 10,
+                    offset: Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: ListView.builder(
+                itemCount: searchResult.length,
+                padding: EdgeInsets.zero,
+                itemBuilder: (_, i) => ListTile(title: Text(searchResult[i])),
+              ),
+            ),
+          ),
       ],
     );
   }

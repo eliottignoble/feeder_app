@@ -4,28 +4,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SearchView extends StatefulWidget {
-  const SearchView({super.key});
+  const SearchView({super.key, required this.onQueryChanged});
+
+  final void Function(List<String> results) onQueryChanged;
 
   @override
   State<SearchView> createState() => _SearchViewState();
 }
 
 class _SearchViewState extends State<SearchView> {
-  List<String> data = ImageInfoCards.values.map((e) => e.title).toList();
-  List<String> searchResult = [];
+  List<String> data = ImageInfoCards.values
+      .map<String>((e) => e.title)
+      .toList();
 
-  // cherche query tapé dans l'input avec ma liste de titre
   void onQueryChanged(String query) {
-    setState(() {
-      searchResult = data
-          .where((item) => item.toLowerCase().contains(query.toLowerCase()))
-          .toList();
-    });
+    final results = query.isEmpty
+        ? <String>[]
+        : data
+              .where((item) => item.toLowerCase().contains(query.toLowerCase()))
+              .toList();
+    widget.onQueryChanged(results);
   }
 
   @override
   Widget build(BuildContext context) {
-    print(searchResult);
     return Column(children: [ClassicSearchBar(onQueryChanged: onQueryChanged)]);
   }
 }

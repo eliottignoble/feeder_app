@@ -50,30 +50,36 @@ class _MyHomePageState extends State<HomeView> {
                       color: CustomColors.white,
                       width: double.maxFinite,
                       child: Container(
-                        padding: EdgeInsets.all(32),
                         child: Column(
                           spacing: 40,
                           children: [
                             //home category
                             HomeCategory(),
                             // text"
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Les plans du moments",
-                                  style: CustomTextStyles.h3,
-                                ),
-                                Text(
-                                  "Voir tout",
-                                  style: CustomTextStyles.baseInter.copyWith(
-                                    color: CustomColors.red,
+                            Padding(
+                              padding: EdgeInsets.all(32),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Les plans du moments",
+                                        style: CustomTextStyles.h3,
+                                      ),
+                                      Text(
+                                        "Voir tout",
+                                        style: CustomTextStyles.baseInter
+                                            .copyWith(color: CustomColors.red),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
+                                  // grid de cards
+                                  HomeGrid(),
+                                ],
+                              ),
                             ),
-                            // grid de cards
-                            HomeGrid(),
                           ],
                         ),
                       ),

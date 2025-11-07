@@ -16,10 +16,9 @@ class HomeHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double itemHeight = 56; // hauteur approx d’un ListTile
-    const double maxHeight = 250; // limite max d'affichage
+    const double itemHeight = 56;
+    const double maxHeight = 250;
 
-    // ✅ hauteur dynamique calculée
     final double dynamicHeight = (searchResult.length * itemHeight).clamp(
       0,
       maxHeight,
@@ -57,12 +56,10 @@ class HomeHeader extends StatelessWidget {
               child: SearchView(onQueryChanged: onQueryChanged),
             ),
 
-            // ✅ on réserve exactement l’espace dynamique
-            if (searchResult.isNotEmpty) SizedBox(height: dynamicHeight + 16),
+            if (searchResult.isNotEmpty) SizedBox(height: dynamicHeight - 16),
           ],
         ),
 
-        // ✅ la liste utilise aussi la hauteur dynamique
         if (searchResult.isNotEmpty)
           Positioned(
             left: 16,
@@ -73,13 +70,6 @@ class HomeHeader extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.12),
-                    blurRadius: 10,
-                    offset: Offset(0, 4),
-                  ),
-                ],
               ),
               child: ListView.builder(
                 itemCount: searchResult.length,

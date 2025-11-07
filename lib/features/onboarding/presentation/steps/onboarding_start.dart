@@ -92,8 +92,6 @@ class _OnboardingStartSate extends State<OnboardingStart> {
                   ),
                 ),
 
-                //counter
-                //Counter(lenghtChunkedImages: chunkedImages.length),
                 // text
                 Text(
                   "Accède aux 500 bons plans qu'on te propose chaque mois",

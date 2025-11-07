@@ -5,14 +5,14 @@ import 'package:feeed/features/home/presentation/components/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:feeed/assets/typography.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeView> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<HomeView> {
   List<String> searchResult = [];
 
   void onQueryChanged(List<String> results) {

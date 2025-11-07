@@ -42,7 +42,7 @@ class NavigationRouter {
         routes: [
           GoRoute(
             path: AppScreens.home.toPath,
-            builder: (context, state) => MyHomePage(),
+            builder: (context, state) => HomeView(),
           ),
           GoRoute(
             path: AppScreens.addPlan.toPath,

@@ -32,17 +32,18 @@ class HomePlan extends StatelessWidget {
             crossAxisCount: 2,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            children: ImageInfoCards.values.map((img) {
+            children: ImageInfoCards.values.map((imageInfoCard) {
               return CardPlan(
-                title: img.title,
-                subtitle: img.subtitle,
-                imagePath: img.imagePath,
-                imageLogo: img.imageLogo,
-                id: img.index,
+                title: imageInfoCard.title,
+                subtitle: imageInfoCard.subtitle,
+                imagePath: imageInfoCard.imagePath,
+                imageLogo: imageInfoCard.imageLogo,
+                id: imageInfoCard.index,
                 onTap: () => {
                   context.pushNamed(
                     AppScreens.plan.name,
-                    pathParameters: {'id': img.index.toString()},
+                    pathParameters: {'id': imageInfoCard.index.toString()},
+                    extra: imageInfoCard,
                   ),
                 },
               );

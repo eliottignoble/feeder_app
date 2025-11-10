@@ -1,23 +1,21 @@
-import 'package:feeed/assets/colors.dart';
+import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
 import 'package:feeed/features/plan/presentation/providers/plan_detail_providers.dart';
 import 'package:flutter/material.dart';
 
 class PlanDetailView extends StatelessWidget {
-  const PlanDetailView({super.key, required this.id});
+  const PlanDetailView({super.key, required this.plan});
 
-  final int id;
+  final ImageInfoCards plan;
 
   @override
   Widget build(BuildContext context) {
-    final store = PlanDetailProviders();
-    final card = store.getCardByIndex(id);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(
             children: [
-              Expanded(child: Image.asset(card.imagePath, height: 256)),
+              Expanded(child: Image.asset(plan.imagePath, height: 256)),
             ],
           ),
         ],

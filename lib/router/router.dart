@@ -3,6 +3,7 @@ import 'package:feeed/features/account/presentation/account_view.dart';
 import 'package:feeed/features/auth/presentation/login_view.dart';
 import 'package:feeed/features/auth/presentation/register_view.dart';
 import 'package:feeed/features/home/presentation/home_view.dart';
+import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
 import 'package:feeed/features/onboarding/presentation/steps/onboarding_start.dart';
 import 'package:feeed/features/paywall/presentation/paywall_view.dart';
 import 'package:feeed/features/plan/presentation/plan_detail_view.dart';
@@ -80,7 +81,8 @@ class NavigationRouter {
           final idString = state.pathParameters['id']!;
           // transform string => number
           final int id = int.tryParse(idString) ?? 0;
-          return PlanDetailView(id: id);
+          final plan = state.extra as ImageInfoCards;
+          return PlanDetailView(plan: plan);
         },
       ),
     ],

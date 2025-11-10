@@ -1,8 +1,11 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/home/presentation/components/search/search_view.dart';
+import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/router/screen_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeHeader extends StatefulWidget {
   const HomeHeader({super.key});
@@ -80,7 +83,14 @@ class _HomeHeaderState extends State<HomeHeader> {
               child: ListView.builder(
                 itemCount: searchResult.length,
                 padding: EdgeInsets.zero,
-                itemBuilder: (_, i) => ListTile(title: Text(searchResult[i])),
+                itemBuilder: (_, i) => ListTile(
+                  title: Text(searchResult[i]),
+                  onTap: () => context.pushNamed(
+                    AppScreens.plan.name,
+                    pathParameters: {'id': i.toString()},
+                    extra: ImageInfoCards.values[i],
+                  ),
+                ),
               ),
             ),
           ),

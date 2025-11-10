@@ -10,8 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final prefs = await SharedPreferences.getInstance();
-
-  prefs.setBool(SharedPreferencesConstants.IsOnboardingCompleted, false);
+  
   // instance du store
   final oboardingProviders = OboardingProvider();
   // load du storage

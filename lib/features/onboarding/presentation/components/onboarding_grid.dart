@@ -53,6 +53,7 @@ class _CardsOnboardingState extends State<CardsOnboarding> {
                 children: [
                   SizedBox(
                     width: 300,
+                    height: 300,
                     child: GridView.count(
                       shrinkWrap: true,
                       crossAxisCount: 2,

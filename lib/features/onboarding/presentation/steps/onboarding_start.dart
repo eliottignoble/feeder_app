@@ -105,6 +105,7 @@ class _OnboardingStartSate extends State<OnboardingStart> {
 
             // --- Bouton d'action ---
             CtaButton(
+              width: 261,
               text: "C'est parti !",
               onPressed: () async {
                 final store = context.read<OboardingProvider>();

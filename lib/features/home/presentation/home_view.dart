@@ -49,39 +49,37 @@ class _MyHomePageState extends State<HomeView> {
                     child: Container(
                       color: CustomColors.white,
                       width: double.maxFinite,
-                      child: Container(
-                        child: Column(
-                          spacing: 40,
-                          children: [
-                            //home category
-                            HomeCategory(),
-                            // text"
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 32),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        "Les plans du moments",
-                                        style: CustomTextStyles.h3,
-                                      ),
-                                      Text(
-                                        "Voir tout",
-                                        style: CustomTextStyles.baseInter
-                                            .copyWith(color: CustomColors.red),
-                                      ),
-                                    ],
-                                  ),
-                                  // grid de cards
-                                  HomeGrid(),
-                                ],
-                              ),
+                      child: Column(
+                        spacing: 40,
+                        children: [
+                          //home category
+                          HomeCategory(),
+                          // text
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 32),
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Les plans du moments",
+                                      style: CustomTextStyles.h3,
+                                    ),
+                                    Text(
+                                      "Voir tout",
+                                      style: CustomTextStyles.baseInter
+                                          .copyWith(color: CustomColors.red),
+                                    ),
+                                  ],
+                                ),
+                                // grid de cards
+                                HomeGrid(),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

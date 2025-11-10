@@ -1,6 +1,5 @@
 import 'package:feeed/assets/colors.dart';
-import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/onboarding/presentation/components/onboarding_card.dart';
+import 'package:feeed/features/shared/style/components/card_plan.dart';
 import 'package:flutter/material.dart';
 
 class CardsOnboarding extends StatefulWidget {
@@ -58,12 +57,11 @@ class _CardsOnboardingState extends State<CardsOnboarding> {
                       shrinkWrap: true,
                       crossAxisCount: 2,
                       children: sublist.map((img) {
-                        return OnboardingCard(
+                        return CardPlan(
                           title: img.title,
                           subtitle: img.subtitle,
                           imagePath: img.imagePath,
                           imageLogo: img.imageLogo,
-                          id: img.index,
                         );
                       }).toList(),
                     ),

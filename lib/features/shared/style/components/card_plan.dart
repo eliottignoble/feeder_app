@@ -5,31 +5,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class OnboardingCard extends StatelessWidget {
-  const OnboardingCard({
+class CardPlan extends StatelessWidget {
+  const CardPlan({
     super.key,
     required this.title,
     required this.subtitle,
     required this.imagePath,
     required this.imageLogo,
-    required this.id,
+    this.id,
+    this.onTap,
   });
 
   final String title;
   final String subtitle;
   final String imagePath;
   final String imageLogo;
-  final int id;
+  final int? id;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        context.pushNamed(
-          AppScreens.plan.name,
-          pathParameters: {'id': id.toString()},
-        );
-      },
+      onTap: onTap,
       child: Column(
         children: [
           Stack(

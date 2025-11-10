@@ -37,10 +37,7 @@ class _MyHomePageState extends State<HomeView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  HomeHeader(
-                    onQueryChanged: onQueryChanged,
-                    searchResult: searchResult,
-                  ),
+                  HomeHeader(),
                   ClipRRect(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(35),

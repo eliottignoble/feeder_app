@@ -4,15 +4,21 @@ import 'package:feeed/features/home/presentation/components/search/search_view.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeHeader extends StatelessWidget {
-  const HomeHeader({
-    super.key,
-    required this.onQueryChanged,
-    required this.searchResult,
-  });
+class HomeHeader extends StatefulWidget {
+  const HomeHeader({super.key});
 
-  final void Function(List<String> result) onQueryChanged;
-  final List<String> searchResult;
+  @override
+  State<HomeHeader> createState() => _HomeHeaderState();
+}
+
+class _HomeHeaderState extends State<HomeHeader> {
+  List<String> searchResult = [];
+
+  void onQueryChanged(List<String> results) {
+    setState(() {
+      searchResult = results;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

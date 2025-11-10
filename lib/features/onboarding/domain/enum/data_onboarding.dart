@@ -1,5 +1,4 @@
 import 'package:feeed/assets/images.dart';
-import 'package:feeed/features/onboarding/presentation/components/onboarding_card.dart';
 
 enum ImageInfoCards {
   image1(

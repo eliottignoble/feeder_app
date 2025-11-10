@@ -1,3 +1,4 @@
+import 'package:feeed/assets/colors.dart';
 import 'package:feeed/features/plan/presentation/providers/plan_detail_providers.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,11 @@ class PlanDetailView extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(children: [Image.asset(card.imagePath, width: double.maxFinite)]),
+          Row(
+            children: [
+              Expanded(child: Image.asset(card.imagePath, height: 256)),
+            ],
+          ),
         ],
       ),
     );

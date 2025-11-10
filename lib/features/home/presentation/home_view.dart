@@ -57,7 +57,7 @@ class _MyHomePageState extends State<HomeView> {
                             HomeCategory(),
                             // text"
                             Padding(
-                              padding: EdgeInsets.all(32),
+                              padding: EdgeInsets.symmetric(horizontal: 32),
                               child: Column(
                                 children: [
                                   Row(

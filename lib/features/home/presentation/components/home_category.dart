@@ -1,7 +1,6 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/features/home/presentation/components/category_box.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class HomeCategory extends StatelessWidget {
   const HomeCategory({super.key});
@@ -17,52 +16,58 @@ class HomeCategory extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           controller: controller,
           child: Row(
-            spacing: 10,
             children: [
-              CategoryBox(
-                backgroundColor: CustomColors.bg,
-                text: "courses",
-                icon: Icons.shopping_bag_outlined,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.red,
-                text: "sport",
-                icon: Icons.directions_run,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.blue,
-                text: "trains",
-                icon: Icons.directions_train_rounded,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "soirées",
-                icon: Icons.nightlife,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "Jeux",
-                icon: Icons.nightlife,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "Jeux",
-                icon: Icons.nightlife,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "Jeux",
-                icon: Icons.nightlife,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "Jeux",
-                icon: Icons.nightlife,
-              ),
-              CategoryBox(
-                backgroundColor: CustomColors.rose,
-                text: "Jeux",
-                icon: Icons.nightlife,
+              SizedBox(width: 32),
+              Row(
+                spacing: 15,
+                children: [
+                  CategoryBox(
+                    backgroundColor: CustomColors.bg,
+                    text: "courses",
+                    icon: Icons.shopping_bag_outlined,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.red,
+                    text: "sport",
+                    icon: Icons.directions_run,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.blue,
+                    text: "trains",
+                    icon: Icons.directions_train_rounded,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "soirées",
+                    icon: Icons.nightlife,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "Jeux",
+                    icon: Icons.nightlife,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "Jeux",
+                    icon: Icons.nightlife,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "Jeux",
+                    icon: Icons.nightlife,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "Jeux",
+                    icon: Icons.nightlife,
+                  ),
+                  CategoryBox(
+                    backgroundColor: CustomColors.rose,
+                    text: "Jeux",
+                    icon: Icons.nightlife,
+                  ),
+                  SizedBox(width: 32),
+                ],
               ),
             ],
           ),

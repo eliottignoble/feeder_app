@@ -63,6 +63,7 @@ class _CardsOnboardingState extends State<CardsOnboarding> {
                           subtitle: img.subtitle,
                           imagePath: img.imagePath,
                           imageLogo: img.imageLogo,
+                          id: img.index,
                         );
                       }).toList(),
                     ),

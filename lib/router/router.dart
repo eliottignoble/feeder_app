@@ -5,10 +5,12 @@ import 'package:feeed/features/auth/presentation/register_view.dart';
 import 'package:feeed/features/home/presentation/home_view.dart';
 import 'package:feeed/features/onboarding/presentation/steps/onboarding_start.dart';
 import 'package:feeed/features/paywall/presentation/paywall_view.dart';
+import 'package:feeed/features/plan/presentation/plan_detail_view.dart';
 import 'package:feeed/features/plan/presentation/plan_view.dart';
 import 'package:feeed/features/shared/style/components/navigations/bottom_bar_shell.dart';
 import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:feeed/router/screen_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:feeed/utils/shared_preferences_constants.dart';
 
@@ -19,9 +21,12 @@ class NavigationRouter {
 
   NavigationRouter(this.sharedPreferencesConstants, this.oboardingProviders);
 
+  final _rootNavigatorKey = GlobalKey<NavigatorState>();
+
   GoRouter get router => _router;
 
   late final GoRouter _router = GoRouter(
+    navigatorKey: _rootNavigatorKey,
     routes: [
       GoRoute(
         path: AppScreens.onboarding1.toPath,
@@ -69,6 +74,16 @@ class NavigationRouter {
       GoRoute(
         path: AppScreens.profile.toPath,
         builder: (context, state) => AccountView(),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavigatorKey,
+        path: AppScreens.plan.toPath,
+        name: AppScreens.plan.name,
+        builder: (context, state) {
+          final idString = state.pathParameters['id']!;
+          final int id = int.tryParse(idString) ?? 0;
+          return PlanDetailView(id: id);
+        },
       ),
     ],
     redirect: (context, state) {

@@ -10,6 +10,7 @@ enum AppScreens {
   paywall,
   profile,
   onboarding1,
+  plan,
 }
 
 extension AppScreensExtension on AppScreens {
@@ -31,6 +32,8 @@ extension AppScreensExtension on AppScreens {
         return '/profile';
       case AppScreens.onboarding1:
         return '/onboarding-step-1';
+      case AppScreens.plan:
+        return '/plan/:id';
     }
   }
 }

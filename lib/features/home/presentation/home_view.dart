@@ -1,6 +1,6 @@
 import 'package:feeed/assets/colors.dart';
-import 'package:feeed/features/home/presentation/components/home_grid.dart';
-import 'package:feeed/features/home/presentation/components/home_category.dart';
+import 'package:feeed/features/home/presentation/components/home_plan.dart';
+import 'package:feeed/features/home/presentation/components/home_categories.dart';
 import 'package:feeed/features/home/presentation/components/home_header.dart';
 import 'package:flutter/material.dart';
 import 'package:feeed/assets/typography.dart';
@@ -53,32 +53,9 @@ class _MyHomePageState extends State<HomeView> {
                         spacing: 40,
                         children: [
                           //home category
-                          HomeCategory(),
-                          // text
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 32),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Les plans du moments",
-                                      style: CustomTextStyles.h3,
-                                    ),
-                                    Text(
-                                      "Voir tout",
-                                      style: CustomTextStyles.baseInter
-                                          .copyWith(color: CustomColors.red),
-                                    ),
-                                  ],
-                                ),
-                                // grid de cards
-                                HomeGrid(),
-                              ],
-                            ),
-                          ),
+                          HomeCategories(),
+                          // grid de cards
+                          HomePlan(),
                         ],
                       ),
                     ),

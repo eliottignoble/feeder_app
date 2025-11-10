@@ -21,12 +21,9 @@ class NavigationRouter {
 
   NavigationRouter(this.sharedPreferencesConstants, this.oboardingProviders);
 
-  final _rootNavigatorKey = GlobalKey<NavigatorState>();
-
   GoRouter get router => _router;
 
   late final GoRouter _router = GoRouter(
-    navigatorKey: _rootNavigatorKey,
     routes: [
       GoRoute(
         path: AppScreens.onboarding1.toPath,
@@ -75,12 +72,13 @@ class NavigationRouter {
         path: AppScreens.profile.toPath,
         builder: (context, state) => AccountView(),
       ),
+      // Plan detail
       GoRoute(
-        parentNavigatorKey: _rootNavigatorKey,
         path: AppScreens.plan.toPath,
         name: AppScreens.plan.name,
         builder: (context, state) {
           final idString = state.pathParameters['id']!;
+          // transform string => number
           final int id = int.tryParse(idString) ?? 0;
           return PlanDetailView(id: id);
         },

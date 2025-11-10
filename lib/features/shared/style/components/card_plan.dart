@@ -1,9 +1,6 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/router/screen_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CardPlan extends StatelessWidget {
   const CardPlan({
@@ -25,6 +22,7 @@ class CardPlan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // added Inkwell with callBack
     return InkWell(
       onTap: onTap,
       child: Column(

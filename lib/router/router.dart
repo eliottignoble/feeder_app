@@ -45,14 +45,20 @@ class NavigationRouter {
           GoRoute(
             path: AppScreens.home.toPath,
             builder: (context, state) => HomeView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: HomeView()),
           ),
           GoRoute(
             path: AppScreens.addPlan.toPath,
             builder: (context, state) => PlanView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: PlanView()),
           ),
           GoRoute(
             path: AppScreens.profile.toPath,
             builder: (context, state) => AccountView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: AccountView()),
           ),
         ],
       ),
@@ -68,10 +74,7 @@ class NavigationRouter {
         path: AppScreens.paywall.toPath,
         builder: (context, state) => PaywallView(),
       ),
-      GoRoute(
-        path: AppScreens.profile.toPath,
-        builder: (context, state) => AccountView(),
-      ),
+
       // Plan detail
       GoRoute(
         path: AppScreens.plan.toPath,

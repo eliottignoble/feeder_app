@@ -1,5 +1,6 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/images.dart';
+import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/plan/presentation/components/commentary_card_plan.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:flutter/material.dart';
@@ -118,6 +119,37 @@ class AccountView extends StatelessWidget {
       );
     }
 
+    // alert dialog
+    void alertDialog() {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: CustomColors.yellow,
+            icon: Icon(Icons.ac_unit),
+            title: Text("AlertDialogue"),
+            scrollable: false,
+            content: const SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Text("Êtes vous sur d'approuver"),
+                  Text('ce message ?'),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('Approve', style: CustomTextStyles.h3),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -141,6 +173,7 @@ class AccountView extends StatelessWidget {
               text: "bottomsheet with cross",
               onPressed: () => showBottomSheetWithCross(),
             ),
+            CtaButton(text: "alertDialog", onPressed: () => alertDialog()),
           ],
         ),
       ),

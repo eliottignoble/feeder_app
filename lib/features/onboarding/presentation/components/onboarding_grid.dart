@@ -56,13 +56,8 @@ class _CardsOnboardingState extends State<CardsOnboarding> {
                     child: GridView.count(
                       shrinkWrap: true,
                       crossAxisCount: 2,
-                      children: sublist.map((img) {
-                        return CardPlan(
-                          title: img.title,
-                          subtitle: img.subtitle,
-                          imagePath: img.imagePath,
-                          imageLogo: img.imageLogo,
-                        );
+                      children: sublist.map((plan) {
+                        return CardPlan(plan: plan);
                       }).toList(),
                     ),
                   ),

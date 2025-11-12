@@ -1,5 +1,5 @@
 import 'package:feeed/features/home/presentation/components/search/search_bar.dart';
-import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,9 +13,7 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
-  List<String> data = ImageInfoCards.values
-      .map<String>((e) => e.title)
-      .toList();
+  List<String> data = planData.map<String>((e) => e.title).toList();
 
   void onQueryChanged(String query) {
     final results = query.isEmpty

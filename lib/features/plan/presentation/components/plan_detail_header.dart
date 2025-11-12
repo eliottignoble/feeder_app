@@ -1,12 +1,12 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:flutter/material.dart';
 
 class PlanDetailHeader extends StatelessWidget {
   const PlanDetailHeader({super.key, required this.plan});
 
-  final ImageInfoCards plan;
+  final Plan plan;
 
   @override
   Widget build(BuildContext context) {

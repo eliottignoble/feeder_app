@@ -1,6 +1,6 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
-import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:feeed/features/shared/style/components/card_plan.dart';
 import 'package:feeed/router/screen_view.dart';
 import 'package:flutter/cupertino.dart';
@@ -32,19 +32,17 @@ class HomePlan extends StatelessWidget {
             crossAxisCount: 2,
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            children: ImageInfoCards.values.map((imageInfoCard) {
+            children: planData.asMap().entries.map((entry) {
+              final index = entry.key;
+              final planValue = entry.value;
               return CardPlan(
-                title: imageInfoCard.title,
-                subtitle: imageInfoCard.subtitle,
-                imagePath: imageInfoCard.imagePath,
-                imageLogo: imageInfoCard.imageLogo,
-                id: imageInfoCard.index,
-                onTap: () => {
+                plan: planData[index],
+                onTap: () {
                   context.pushNamed(
                     AppScreens.plan.name,
-                    pathParameters: {'id': imageInfoCard.index.toString()},
-                    extra: imageInfoCard,
-                  ),
+                    pathParameters: {'id': index.toString()},
+                    extra: planData[index],
+                  );
                 },
               );
             }).toList(),

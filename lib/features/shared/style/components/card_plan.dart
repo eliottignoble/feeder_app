@@ -1,23 +1,12 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/typography.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:flutter/material.dart';
 
 class CardPlan extends StatelessWidget {
-  const CardPlan({
-    super.key,
-    required this.title,
-    required this.subtitle,
-    required this.imagePath,
-    required this.imageLogo,
-    this.id,
-    this.onTap,
-  });
+  const CardPlan({super.key, required this.plan, this.onTap});
 
-  final String title;
-  final String subtitle;
-  final String imagePath;
-  final String imageLogo;
-  final int? id;
+  final Plan plan;
   final void Function()? onTap;
 
   @override
@@ -33,7 +22,7 @@ class CardPlan extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(7),
                 child: Image.asset(
-                  imagePath,
+                  plan.imagePath,
                   fit: BoxFit.cover,
                   width: 120,
                   height: 60,
@@ -46,7 +35,7 @@ class CardPlan extends StatelessWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(imageLogo, width: 20, height: 20),
+                  child: Image.asset(plan.imageLogo, width: 20, height: 20),
                 ),
               ),
             ],
@@ -56,12 +45,12 @@ class CardPlan extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                title,
+                plan.title,
                 style: CustomTextStyles.cardsOnboardingTitle,
                 textAlign: TextAlign.start,
               ),
               Text(
-                subtitle,
+                plan.title,
                 style: CustomTextStyles.cardsOnboardingsDescription,
                 textAlign: TextAlign.start,
               ),

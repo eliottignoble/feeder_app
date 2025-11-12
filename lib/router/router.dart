@@ -3,7 +3,7 @@ import 'package:feeed/features/account/presentation/account_view.dart';
 import 'package:feeed/features/auth/presentation/login_view.dart';
 import 'package:feeed/features/auth/presentation/register_view.dart';
 import 'package:feeed/features/home/presentation/home_view.dart';
-import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:feeed/features/onboarding/presentation/steps/onboarding_start.dart';
 import 'package:feeed/features/paywall/presentation/paywall_view.dart';
 import 'package:feeed/features/plan/presentation/plan_detail_view.dart';
@@ -11,7 +11,6 @@ import 'package:feeed/features/plan/presentation/plan_view.dart';
 import 'package:feeed/features/shared/style/components/navigations/bottom_bar_shell.dart';
 import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:feeed/router/screen_view.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:feeed/utils/shared_preferences_constants.dart';
 
@@ -81,7 +80,7 @@ class NavigationRouter {
           final idString = state.pathParameters['id']!;
           // transform string => number
           final int id = int.tryParse(idString) ?? 0;
-          final plan = state.extra as ImageInfoCards;
+          final plan = state.extra as Plan;
           return PlanDetailView(plan: plan);
         },
       ),

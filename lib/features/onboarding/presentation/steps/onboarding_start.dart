@@ -1,8 +1,7 @@
 import 'package:feeed/assets/colors.dart';
-import 'package:feeed/features/onboarding/domain/enum/data_onboarding.dart';
+import 'package:feeed/features/onboarding/domain/ImageData.dart';
 import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/onboarding/presentation/components/onboarding_grid.dart';
-import 'package:feeed/features/onboarding/presentation/components/counter.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:feeed/providers/onboarding_provider.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +18,11 @@ class _OnboardingStartSate extends State<OnboardingStart> {
   @override
   Widget build(BuildContext context) {
     // 1️⃣ Créer les sous-listes (4 images par card)
-    List<List<ImageInfoCards>> chunkedImages = [];
-    for (var i = 0; i < ImageInfoCards.values.length; i += 4) {
-      chunkedImages.add(
-        ImageInfoCards.values.sublist(
-          i,
-          (i + 4).clamp(0, ImageInfoCards.values.length),
-        ),
-      );
+    List<List<dynamic>> chunkedImages = [];
+
+    for (var i = 0; i < planData.length; i += 4) {
+      final end = (i + 4 > planData.length) ? planData.length : i + 4;
+      chunkedImages.add(planData.sublist(i, end));
     }
 
     return Scaffold(

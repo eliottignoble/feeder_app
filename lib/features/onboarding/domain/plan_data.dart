@@ -73,4 +73,11 @@ final List<Plan> planData = [
     'Giga MAXI Tacos',
     'Pas besoin de garants',
   ),
+  Plan(
+    9,
+    CustomImages.tacos,
+    CustomImages.logosTacos,
+    'étoile de mer',
+    'même pas peur',
+  ),
 ];

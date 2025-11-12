@@ -1,5 +1,5 @@
 import 'package:feeed/features/home/presentation/components/search/search_bar.dart';
-import 'package:feeed/features/onboarding/domain/ImageData.dart';
+import 'package:feeed/features/onboarding/domain/plan_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

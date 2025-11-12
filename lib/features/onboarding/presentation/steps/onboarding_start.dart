@@ -1,5 +1,5 @@
 import 'package:feeed/assets/colors.dart';
-import 'package:feeed/features/onboarding/domain/ImageData.dart';
+import 'package:feeed/features/onboarding/domain/plan_data.dart';
 import 'package:feeed/assets/typography.dart';
 import 'package:feeed/features/onboarding/presentation/components/onboarding_grid.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';

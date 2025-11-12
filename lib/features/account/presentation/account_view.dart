@@ -128,7 +128,6 @@ class AccountView extends StatelessWidget {
             backgroundColor: CustomColors.yellow,
             icon: Icon(Icons.ac_unit),
             title: Text("AlertDialogue"),
-            scrollable: false,
             content: const SingleChildScrollView(
               child: ListBody(
                 children: [

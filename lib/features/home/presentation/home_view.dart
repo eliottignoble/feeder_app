@@ -13,17 +13,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomeView> {
-  List<String> searchResult = [];
-
-  void onQueryChanged(List<String> results) {
-    setState(() {
-      searchResult = results;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    print(searchResult);
     return Scaffold(
       backgroundColor: CustomColors.bg,
       body: Stack(

@@ -3,7 +3,7 @@ import 'package:feeed/features/account/presentation/account_view.dart';
 import 'package:feeed/features/auth/presentation/login_view.dart';
 import 'package:feeed/features/auth/presentation/register_view.dart';
 import 'package:feeed/features/home/presentation/home_view.dart';
-import 'package:feeed/features/onboarding/domain/ImageData.dart';
+import 'package:feeed/features/onboarding/domain/plan_data.dart';
 import 'package:feeed/features/onboarding/presentation/steps/onboarding_start.dart';
 import 'package:feeed/features/paywall/presentation/paywall_view.dart';
 import 'package:feeed/features/plan/presentation/plan_detail_view.dart';

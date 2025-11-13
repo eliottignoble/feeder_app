@@ -1,6 +1,7 @@
 import 'package:feeed/assets/colors.dart';
 import 'package:feeed/assets/images.dart';
 import 'package:feeed/assets/typography.dart';
+import 'package:feeed/features/home/presentation/components/call_api.dart';
 import 'package:feeed/features/plan/presentation/components/commentary_card_plan.dart';
 import 'package:feeed/features/shared/style/components/cta_button.dart';
 import 'package:flutter/material.dart';
@@ -152,28 +153,31 @@ class AccountView extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 20,
-          children: [
-            CtaButton(
-              text: "bottomsheet classic",
-              onPressed: () => showBottomSheet(),
-            ),
-            CtaButton(
-              text: "bottomsheet fullScreen",
-              onPressed: () => showBottomSheetFullScreen(),
-            ),
-            CtaButton(
-              text: "bottomsheet with scrollView",
-              onPressed: () => showBottomSheetWithScrollView(),
-            ),
-            CtaButton(
-              text: "bottomsheet with cross",
-              onPressed: () => showBottomSheetWithCross(),
-            ),
-            CtaButton(text: "alertDialog", onPressed: () => alertDialog()),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 20,
+            children: [
+              CtaButton(
+                text: "bottomsheet classic",
+                onPressed: () => showBottomSheet(),
+              ),
+              CtaButton(
+                text: "bottomsheet fullScreen",
+                onPressed: () => showBottomSheetFullScreen(),
+              ),
+              CtaButton(
+                text: "bottomsheet with scrollView",
+                onPressed: () => showBottomSheetWithScrollView(),
+              ),
+              CtaButton(
+                text: "bottomsheet with cross",
+                onPressed: () => showBottomSheetWithCross(),
+              ),
+              CtaButton(text: "alertDialog", onPressed: () => alertDialog()),
+              CallApi(),
+            ],
+          ),
         ),
       ),
     );
